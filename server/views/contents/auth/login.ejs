@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="offset-md-3 col-md-6 col-sm-12">
+    <div class="login" id="contentArea">
+
+      <h1 class="p-3">Sign In</h1> 
+      <%- include('../../partials/messages.ejs'); %>
+
+      <form id="loginForm" novalidate method="POST">
+
+        <div class="form-floating mb-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="username"
+            name="username" 
+            required
+            value=""
+            placeholder="User Name">
+          <label for="username">UserName</label>
+        </div>
+
+        <div class="form-floating">
+          <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            name="password"
+            required
+            value=""
+            placeholder="Password">
+          <label for="password">Password</label>
+        </div>
+
+        <div class="text-center my-3">
+          <button id="loginButton" type="submit" class="btn btn-secondary"><i class="fas fa-sign-in-alt"></i> Sign
+            in</button>
+          <button id="cancelButton" type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Cancel</button>
+        </div>
+
+
+
+      </form>
+
+      <p class="text-center text-muted small">
+        Don't have an account?
+        <a href="/auth/register">Register Here!</a>
+      </p>
+
+    </div>
+  </div>

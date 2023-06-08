@@ -1,0 +1,89 @@
+<!-- Navigation Bar: Top -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/home">
+      <img class="w-50" src="/assets/images/looplogo.png"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+ 
+        <!-- HOME -->
+        <% if (title=="Home" ) { %>
+        <li class="nav-item active bg-secondary rounded-3">       
+        
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+
+        <a class="nav-link" aria-current="page" href="/home">Home</a>
+        </li>   
+              
+        
+        <!-- Logged in: Manage Your Surveyss: Active -->
+        <% if ( typeof displayName == 'string' && displayName && title=="Manage Your Surveys" ) { %>
+        
+        <li class="nav-item">
+        <a class="nav-link" href="/survey/active">ActiveSurveys</a>
+        </li>  
+        
+        <li class="nav-item active bg-secondary rounded-3">
+        <a class="nav-link" href="/survey/manage">ManageSurveys</a>
+        </li>  
+
+        <li class="nav-item">
+        <a class="nav-link" href="/auth/logout"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
+        </li>
+                  
+        <!-- Logged in: Active Surveys: Active -->
+        <% } else if ( typeof displayName == 'string' && displayName && title=="Active Surveys"){ %>
+  
+        <li class="nav-item active bg-secondary rounded-3">
+        <a class="nav-link" href="/survey/active">ActiveSurveys</a>
+        </li>  
+ 
+        <li class="nav-item">
+        <a class="nav-link" href="/survey/manage">ManageSurveys</a>
+        </li>    
+        
+        <li class="nav-item">
+        <a class="nav-link" href="/auth/logout"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
+        </li>
+
+        <% } else if ( typeof displayName == 'string' && displayName && title!="Manage Your Surveys" && title != "Active Surveys"){ %>
+  
+          <li class="nav-item">
+          <a class="nav-link" href="/survey/active">ActiveSurveys</a>
+          </li>  
+   
+          <li class="nav-item">
+          <a class="nav-link" href="/survey/manage">ManageSurveys</a>
+          </li>    
+          
+          <li class="nav-item">
+          <a class="nav-link" href="/auth/logout"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>
+          </li>
+  
+        <% } else if ( title == "Sign In" ) { %>
+  
+        <li class="nav-item active bg-secondary rounded-3">
+        <a class="nav-link" href="/auth/login"><i class="fas fa-sign-in-alt fa-lg"></i> Login</a>
+        </li>   
+          
+        <% } else { %>
+
+        <li class="nav-item">
+        <a class="nav-link" href="/auth/login"><i class="fas fa-sign-in-alt fa-lg"></i> Login</a>
+        </li>   
+  
+        <% } %>
+
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,60 @@
+<div class="container">
+    <form method="POST">
+
+        <!-- When there' no questions to answer -->
+
+            <% if (item.questions.length == 0) { %>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-1 col-sm-12"></div>
+        
+                    <div class="col-lg-6 col-md-10 col-sm-12 text-center p-5 my-5">
+                        <h1 class="display-6"> This Survey Is Empty!</h1>
+                        <button type="submit" class="btn btn-secondary my-4">Take me out of here!</a>
+                    </div>
+                    <div class="col-lg-3 col-md-1 col-sm-12"></div>
+                </div>
+             
+            <% } else { %>
+
+            <!-- ============================================================================================ -->
+            <!-- =============                         LOOPING!!!!!!!                        ================ -->            
+            <!-- ============================================================================================ -->
+            
+            <% for( let i = 0; i < item.questions.length; i++ ) { %>
+        <div class="row">
+            <div class="col-lg-3 col-md-1 col-sm-12"></div>
+            <div class="col-lg-6 col-md-10 col-sm-12">
+
+                <div class="jumbotron bg-light mt-5 p-5 text-center">
+                    <h6> Question #<%= i + 1 %></h6>
+                    <!-- Question Goes Here -->
+                    <h1 class="display-6" name="q<%= i %>"> <%= item.questions[i].question %> </h1>
+                    <hr>
+
+                    <a class="btn btn-secondary mt-3" href="/survey/take/<%=item._id%>/question/<%=item.questions[i]._id%>">
+                    What do you Think?</a>
+                    
+                </div>
+             </div>
+            <div class="col-lg-3 col-md-1 col-sm-12"></div>
+         </div>
+
+        <% } %> 
+            <!-- ============================================================================================ -->
+            <!-- =============                         LOOPED !!!!!!!                        ================ -->            
+            <!-- ============================================================================================ -->
+        <div class="row">
+            <div class="col-lg-3 col-md-1 col-sm-12"></div>
+
+            <div class="col-lg-6 col-md-10 col-sm-12 text-center p-5 my-5">
+                <h1 class="display-6"> Thank you for your time!</h1>
+                <button type="submit" class="btn btn-dark my-4">Submit Answers</a>
+            </div>
+            <div class="col-lg-3 col-md-1 col-sm-12"></div>
+        </div>
+
+        <% } %>
+
+    </form>
+</div>

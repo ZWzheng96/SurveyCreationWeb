@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="offset-md-3 col-md-6 col-sm-12">
+    <div class="login" id="contentArea">
+
+      <h1 class="p-3">Create Account</h1> 
+      <%- include('../../partials/messages.ejs'); %>
+
+      <!-- Register User -->
+      <form id="registerForm" novalidate method="POST">
+        
+        <h5><p><i class="fas fa-database"></i> System Identification</p></h5>
+
+        <div class="form-floating mb-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="username"
+            name="username" 
+            required
+            value=""
+            placeholder="User Name">
+          <label for="username">User Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            name="password"
+            required
+            value=""
+            placeholder="Password">
+          <label for="password">Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input 
+            type="password" 
+            class="form-control" 
+            id="confirmPassword" 
+            name="confirmPassword"
+            required
+            value=""
+            placeholder="Confirm Password">
+          <label for="password">Confirm Password</label>
+        </div>
+
+
+        <h5><p><i class="fas fa-user-shield"></i> Personal Information </p></h5>
+
+        <div class="row">
+
+        <div class="form-floating mb-3 col-6">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="firstName"
+            name="firstName" 
+            required
+            value=""
+            placeholder="First Name">
+          <label class="ms-3 ps-2" for="firstName">First Name</label>
+        </div>
+
+        <div class="form-floating mb-3 col-6">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="lastName" 
+            name="lastName"
+            required
+            value=""
+            placeholder="Last Name">
+          <label class="ms-3 ps-2" for="LastName">Last Name</label>
+        </div>
+
+        </div>
+
+        <div class="form-floating mb-3">
+          <input 
+            type="email" 
+            class="form-control" 
+            id="emailAddress"
+            name="email" 
+            required
+            value=""
+            placeholder="User Name">
+          <label for="email">Email Address</label>
+        </div>
+
+
+        <div class="text-center my-3">
+          <button id="submitButton" type="submit" class="btn btn-secondary"><i class="fas fa-sign-in-alt"></i> Register</button>
+          <button id="cancelButton" type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h1 class="p-3">
+        <%= title %>
+    </h1>
+    <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="title" name="title" aria-label="title"
+                aria-describedby="title" required value="<%= item.title %>" placeholder="title">
+            <label class="ms-0" for="title">What's the title of your Survey?</label>
+        </div>
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="remarks" name="remarks" aria-label="remarks"
+                aria-describedby="remarks" required value="<%= item.remarks %>" placeholder="remarks">
+            <label class="ms-0" for="remarks">Would you describe your survey briefly?</label>
+        </div>
+
+        <!-- Buttons for adding Questionaires -->
+        <% if (title.search("Update")> -1 ) { %>
+
+        <% } else { %>
+
+        <!-- Button: Add -->
+        <button type="submit" id="submitButton" class="btn btn-secondary">
+            <i class="fas fa-plus-circle"></i> Let's Start! 
+        </button>
+
+        <!-- Button: Add -->
+        <a href="/survey/manage" id="cancelButton" class="btn btn-dark">
+            <i class="fas fa-undo"></i> Take Me Back
+        </a>
+        <% } %>
+    </form>
+</div>
+</div>

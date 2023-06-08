@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="p-3">
+        <%= title %> 
+    </h1>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center" scope="col">#</th>
+                    <th class="text-center" scope="col">Title</th>
+                    <th class="text-center" scope="col">PostedBy</th>
+                    <th class="text-center" scope="col">PostedDate</th>
+                    <th class="text-center" scope="col">Questions</th>
+                    <th></th>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for (let count = 0; count < surveyList.length; count++) { %> 
+                    <tr>
+                        <th class=" text-center" scope="row">
+                            <%= count + 1 %> 
+                        </th>
+                        <td class=> <%= surveyList[count].title %> </td>
+                        <td class="text-center"> <%= surveyList[count].user.username %> </td>
+                        <td class="text-center"> <%= surveyList[count].date.toLocaleDateString() %> </td>
+                        <td class="text-center" scope="col"> <%= surveyList[count].questions.length %> </td>
+                        <td class="text-end"> 
+                            <a href="/survey/take/<%= surveyList[count]._id %>" class="btn btn-dark btn-sm edit"><i class="fas fa-edit fa-sm"></i> TakeSurvey </a>
+                        </td>
+                    </tr>
+                    <% } %> 
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

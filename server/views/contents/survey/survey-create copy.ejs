@@ -1,0 +1,72 @@
+<div class="container">
+
+    <h1 class="p-3">
+        <%= title %>
+    </h1>
+    <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="userName" name="userName" aria-label="UserName"
+                aria-describedby="UserName" required value="<%= item.userName %>" placeholder="UserName">
+            <label class="ms-0" for="name">UserName</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="title" name="title" aria-label="title"
+                aria-describedby="title" required value="<%= item.title %>" placeholder="title">
+            <label class="ms-0" for="phone">title</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="answer" name="answer" aria-label="Answer"
+                aria-describedby="Answer" required value="<%= item.answer %>" placeholder="Answer">
+            <label class="ms-0" for="email">Answer</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="remarks" name="remarks" aria-label="Remarks"
+                aria-describedby="Remarks" value="<%= item.remarks %>" placeholder="Remarks">
+
+            <label class="ms-0" for="remarks">Remarks</label>
+        </div>
+
+        <!-- Update: 3 Buttons (Update, Cancel, Delete) -->
+        <% if (title.search("Update")> -1 ) { %>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <!-- Button: Update -->
+                    <button type="submit" id="submitButton" class="btn btn-secondary">
+                        <i class="fas fa-edit"></i> Update
+                    </button>
+                    <!-- Button: Cancel -->
+                    <a href="/survey/manage" id="cancelButton" class="btn btn-dark">
+                        <i class="fas fa-undo"></i> Cancel
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 text-end">
+                    <!-- Button: Delete -->
+                    <a href="/survey/delete/<%= item._id %>" id="deleteButton" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add: 2 Buttons (Add, Cancel) -->
+            <% } else { %>
+
+                <!-- Button: Add -->
+                <button type="submit" id="submitButton" class="btn btn-secondary">
+                    <i class="fas fa-plus-circle"></i> Add It
+                </button>
+
+                <!-- Button: Add -->
+                <a href="/survey/manage" id="cancelButton" class="btn btn-dark">
+                    <i class="fas fa-undo">
+                    </i> Cancel</a>
+
+                <% } %>
+    </form>
+</div>
+</div>

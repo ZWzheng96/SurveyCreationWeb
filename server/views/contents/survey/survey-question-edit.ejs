@@ -1,0 +1,63 @@
+<div class="container">
+
+    <h1 class="p-3">
+        <%= title %> 
+    </h1>
+    <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="question" name="question" aria-label="question"
+                aria-describedby="question" required placeholder="title" value="<%= item.question %>">
+            <label class="ms-0" for="title">Question</label>
+        </div>
+
+        <hr> <!-- Options -->
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="option1" name="option1" aria-label="option1"
+                aria-describedby="option1" placeholder="title" value="<%= values[0] %>">
+            <label class="ms-0" for="title">Answer Option #1</label>
+        </div>
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="option2" name="option2" aria-label="option2"
+                aria-describedby="option2" placeholder="title" value="<%= values[1] %>">
+            <label class="ms-0" for="title">Answer Option #2</label>
+        </div>
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="option3" name="option3" aria-label="option3"
+                aria-describedby="option3" placeholder="title" value="<%= values[2] %>">
+            <label class="ms-0" for="title">Answer Option #3</label>
+        </div>
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="option4" name="option4" aria-label="option4"
+                aria-describedby="option4" placeholder="title" value="<%= values[3] %>">
+            <label class="ms-0" for="title">Answer Option #4</label>
+        </div>
+
+        <div class="form-floating mb-3 col-12">
+            <input type="text" class="form-control" id="option5" name="option5" aria-label="option5"
+                aria-describedby="option5" placeholder="title" value="<%= values[4] %>">
+            <label class="ms-0" for="title">Answer Option #5</label>
+        </div>
+
+
+        <!-- Buttons for adding Questionaires -->
+        <% if (title.search("Update")> -1 ) { %>
+
+        <% } else { %>
+
+        <!-- Button: Add -->
+        <button type="submit" id="submitButton" class="btn btn-secondary">
+            <i class="fas fa-plus-circle"></i> Keep Movin! 
+        </button>
+
+        <!-- Button: Add -->
+        <a href="/survey/manage" id="cancelButton" class="btn btn-dark">
+            <i class="fas fa-undo"></i> Take Me Back
+        </a>
+        <% } %>
+    </form>
+</div>
+</div>
